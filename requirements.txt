@@ -2,4 +2,6 @@ pandas
 numpy
 sklearn
 matplotlib
-ucimlrepo
+xgboost
+imblearn
+seaborn 
