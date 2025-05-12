@@ -3,7 +3,7 @@ import joblib as jl
 import numpy as np
 
 # Load the pre-trained model
-model = jl.load('diabetes_model.pkl')
+# model = jl.load('diabetes_model.pkl')
 
 st.title("Diabetes Prediction App")
 st.write("This app predicts the likelihood of diabetes based on a few simple inputs about your health and lifestyle.")
