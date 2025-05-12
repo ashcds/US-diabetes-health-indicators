@@ -1,0 +1,32 @@
+# Ignore Python bytecode and compiled files
+__pycache__/
+*.py[cod]
+*.so
+
+# Ignore the virtual environment
+venv/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Streamlit cache and logs
+.streamlit/
+
+# Model files (except .pkl)
+*.joblib
+*.h5
+
+# Data files
+*.csv
+*.tsv
+*.xlsx
+
+# OS-generated files
+.DS_Store
+Thumbs.db
+
+# Environment variable files
+.env
+
+# Log files
+*.log
