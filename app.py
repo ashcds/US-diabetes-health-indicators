@@ -6,7 +6,7 @@ import numpy as np
 model = jl.load('diabetes_model.pkl')
 st.title("Diabetes Prediction App")
 st.write("This app predicts the likelihood of diabetes based on a few simple inputs about your health and lifestyle.")
-st.write_stream("Please answer the questions below for your evaluation.")
+st.write("Please answer the questions below for your evaluation.")
 
 # Get user inputs for all features
 HighBP = st.selectbox("Do you have high blood pressure?", [0, 1])
