@@ -83,20 +83,23 @@ else:
     Income = 8
 
 # Create input array
-features = pd.DataFrame([{
-    'HighBP': HighBP,
-    'HighChol': HighChol,
-    'BMI': BMI,
-    'Stroke': Stroke,
-    'HeartDiseaseorAttack': HeartDiseaseorAttack,
-    'HvyAlcoholConsump': HvyAlcoholConsump,
-    'GenHlth': GenHlth,
-    'MentHlth': MentHlth,
-    'PhysHlth': PhysHlth,
-    'DiffWalk': DiffWalk,
-    'Age': Age,
-    'Income': Income
-}])
+features = pd.DataFrame([[
+    HighBP, HighChol, BMI, Stroke,
+    HeartDiseaseorAttack, HvyAlcoholConsump,
+    GenHlth, MentHlth, PhysHlth, DiffWalk,
+    Age, Income
+]], columns=[
+    'HighBP', 'HighChol', 'BMI', 'Stroke',
+    'HeartDiseaseorAttack', 'HvyAlcoholConsump',
+    'GenHlth', 'MentHlth', 'PhysHlth', 'DiffWalk',
+    'Age', 'Income'
+])
+
+st.write("Input Data:")
+st.write(input_data)
+st.write("Shape:", input_data.shape)
+st.write("Missing values:", input_data.isnull().sum())
+
 
 # Make prediction
 if st.button("Predict Diabetes Risk"):
