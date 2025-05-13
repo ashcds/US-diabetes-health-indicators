@@ -1,6 +1,7 @@
 import streamlit as st
 import joblib as jl
 import numpy as np
+import pandas as pd
 
 # Load the pre-trained model
 model = jl.load('diabetes_model.pkl')
@@ -43,7 +44,7 @@ Age = 50
 Income = 40000
 
 # Create input array
-features = np.array([[HighBP, HighChol, BMI, Stroke, HeartDiseaseorAttack, HvyAlcoholConsump, GenHlth, MentHlth, PhysHlth, DiffWalk, Age, Income]])
+features = pd.DataFrame([[HighBP, HighChol, BMI, Stroke, HeartDiseaseorAttack, HvyAlcoholConsump, GenHlth, MentHlth, PhysHlth, DiffWalk, Age, Income]])
 
 # Make prediction
 if st.button("Predict Diabetes Risk"):
