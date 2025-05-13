@@ -40,8 +40,47 @@ HvyAlcoholConsump = convert_to_binary(HvyAlcoholConsump_input)
 DiffWalk = convert_to_binary(DiffWalk_input)
 
 # Convert Age and Income to categorical
-Age = 50
-Income = 40000
+if Age_input < 25:
+    Age = 1
+elif Age_input < 30:
+    Age = 2
+elif Age_input < 35:
+    Age = 3
+elif Age_input < 40:
+    Age = 4
+elif Age_input < 45:
+    Age = 5
+elif Age_input < 50:
+    Age = 6
+elif Age_input < 55:
+    Age = 7
+elif Age_input < 60:
+    Age = 8
+elif Age_input < 65:
+    Age = 9
+elif Age_input < 70:
+    Age = 10
+elif Age_input < 75:
+    Age = 11
+else:
+    Age = 12
+
+if Income_input < 10000:
+    Income = 1
+elif Income_input < 15000:
+    Income = 2
+elif Income_input < 20000:
+    Income = 3
+elif Income_input < 25000:
+    Income = 4
+elif Income_input < 35000:
+    Income = 5
+elif Income_input < 50000:
+    Income = 6
+elif Income_input < 75000:
+    Income = 7
+else:
+    Income = 8
 
 # Create input array
 features = pd.DataFrame([{
@@ -58,6 +97,7 @@ features = pd.DataFrame([{
     'Age': Age,
     'Income': Income
 }])
+
 # Make prediction
 if st.button("Predict Diabetes Risk"):
     prediction = model.predict(features)
