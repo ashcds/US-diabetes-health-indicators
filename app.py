@@ -4,7 +4,7 @@ import numpy as np
 import pandas as pd
 
 # Load the pre-trained model
-model = jl.load('diabetes_model.pkl')
+model = jl.load('diabetes_model1.pkl')
 st.title("Diabetes Prediction App")
 st.write("This app predicts the likelihood of diabetes based on a few simple inputs about your health and lifestyle.")
 st.write("Please answer the questions below for your evaluation.")
