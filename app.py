@@ -96,9 +96,9 @@ features = pd.DataFrame([[
 ])
 
 st.write("Input Data:")
-st.write(input_data)
-st.write("Shape:", input_data.shape)
-st.write("Missing values:", input_data.isnull().sum())
+st.write(features)
+st.write("Shape:", features.shape)
+st.write("Missing values:", features.isnull().sum())
 
 
 # Make prediction
