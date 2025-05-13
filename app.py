@@ -39,7 +39,8 @@ HvyAlcoholConsump = convert_to_binary(HvyAlcoholConsump_input)
 DiffWalk = convert_to_binary(DiffWalk_input)
 
 # Convert Age and Income to categorical
-
+Age = 50
+Income = 40000
 
 # Create input array
 features = np.array([[HighBP, HighChol, BMI, Stroke, HeartDiseaseorAttack, HvyAlcoholConsump, GenHlth, MentHlth, PhysHlth, DiffWalk, Age, Income]])
