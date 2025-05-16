@@ -17,19 +17,24 @@ def convert_to_binary(feature):
         return 0
     
 # Get user inputs for all features
-Age_input = st.selectbox("How old you are?", list(range(1, 100))) # Convert to grouping 
+Age_input = st.selectbox("How old you are?", ["Select age"] + list(range(1, 99)), index=0) # Convert to grouping 
 Income_input = st.number_input(label="Enter your annual income ($)", min_value=0,format="%d", step=1000)# Convert to grouping 
-HighBP_input = st.selectbox("Do you have high blood pressure?", ["Yes", "No"]) # Convert to binary
-HighChol_input = st.selectbox("Do you have high cholesterol?", ["Yes", "No"]) # Convert to binary
-BMI = st.number_input("What is your BMI?", min_value=10.0, max_value=60.0, value=25.0)
-Stroke_input = st.selectbox("Have you ever had a stroke?", ["Yes", "No"]) # Convert to binary
-HeartDiseaseorAttack_input = st.selectbox("Do you have any history of heart disease or heart attack?", ["Yes", "No"]) # Convert to binary
-HvyAlcoholConsump_input = st.selectbox("Do you consume over 14 drinks/week (male) or over 7 drinks/week (female)?", ["Yes", "No"]) # Convert to binary
+HighBP_input = st.selectbox("Do you have high blood pressure?", ["Select", "Yes", "No"]) # Convert to binary
+HighChol_input = st.selectbox("Do you have high cholesterol?", ["Select","Yes", "No"]) # Convert to binary
+BMI = st.number_input("What is your BMI?", min_value=10.0, max_value=60.0, value=25.0, step=0.1, format="%.1f") 
+Stroke_input = st.selectbox("Have you ever had a stroke?", ["Select","Yes", "No"]) # Convert to binary
+HeartDiseaseorAttack_input = st.selectbox("Do you have any history of heart disease or heart attack?", ["Select","Yes", "No"]) # Convert to binary
+HvyAlcoholConsump_input = st.selectbox("Do you consume over 14 drinks/week (male) or over 7 drinks/week (female)?", ["Select","Yes", "No"]) # Convert to binary
 GenHlth = st.slider("How would you rate you health overall? (1 = Excellent, 5 = Poor)", 1, 5, 3)
 MentHlth = st.slider("Thinking about your mental health, including stress, depression, and problems with emotions, for how many days during the past 30 days was your mental health not good?", 0, 30, 0)
 PhysHlth = st.slider("Thinking about your physical health, which includes physical illness and injury, for how many days during the past 30 days was your physical health not good?", 0, 30, 0)
-DiffWalk_input = st.selectbox("Do you experience difficulty walking?", ["Yes", "No"]) # Convert to binary
+DiffWalk_input = st.selectbox("Do you experience difficulty walking?", ["Select","Yes", "No"]) # Convert to binary
 
+# Check if the user has selected an age
+if Age_input != "Select age":
+    Age_input = int(Age_input) 
+else: 
+    st.warning("Please select your age") 
 
 # Convert categorical inputs to binary
 HighBP = convert_to_binary(HighBP_input)
@@ -62,8 +67,10 @@ elif Age_input < 70:
     Age = 10
 elif Age_input < 75:
     Age = 11
-else:
+elif Age_input < 80:
     Age = 12
+else: 
+    Age = 13
 
 if Income_input < 10000:
     Income = 1
@@ -95,10 +102,10 @@ features = pd.DataFrame([[
     'Age', 'Income'
 ])
 
-st.write("Input Data:")
-st.write(features)
-st.write("Shape:", features.shape)
-st.write("Missing values:", features.isnull().sum())
+# st.write("Input Data:")
+# st.write(features)
+# st.write("Shape:", features.shape)
+# st.write("Missing values:", features.isnull().sum())
 
 
 # Make prediction
