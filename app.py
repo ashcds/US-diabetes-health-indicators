@@ -30,12 +30,6 @@ MentHlth = st.slider("Thinking about your mental health, including stress, depre
 PhysHlth = st.slider("Thinking about your physical health, which includes physical illness and injury, for how many days during the past 30 days was your physical health not good?", 0, 30, 0)
 DiffWalk_input = "No"
 
-# Check if the user has selected an age
-if Age_input != "Select age":
-    Age_input = int(Age_input) 
-else: 
-    st.warning("Please select your age") 
-
 # Convert categorical inputs to binary
 HighBP = convert_to_binary(HighBP_input)
 HighChol = convert_to_binary(HighChol_input)
