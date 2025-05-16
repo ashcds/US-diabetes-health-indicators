@@ -28,7 +28,7 @@ HvyAlcoholConsump_input = st.selectbox("Do you consume over 14 drinks/week (male
 GenHlth = st.slider("How would you rate you health overall? (1 = Excellent, 5 = Poor)", 1, 5, 3)
 MentHlth = st.slider("Thinking about your mental health, including stress, depression, and problems with emotions, for how many days during the past 30 days was your mental health not good?", 0, 30, 0)
 PhysHlth = st.slider("Thinking about your physical health, which includes physical illness and injury, for how many days during the past 30 days was your physical health not good?", 0, 30, 0)
-DiffWalk_input = st.selectbox("Do you experience difficulty walking?", ["Select","Yes", "No"]) # Convert to binary
+DiffWalk_input = "No"
 
 # Check if the user has selected an age
 if Age_input != "Select age":
