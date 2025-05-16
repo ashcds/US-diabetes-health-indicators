@@ -1,7 +1,7 @@
 # 🩺 Diabetes Prediction Using ML
 
 Check your risk of diabetes by answering a few simple questions! 
-🚀 [Live App](https://check-your-diabetes-risk.streamlit.app/)
+🚀 [Live App](https://check-your-diabetes-risk.streamlit.app/) 
 
 ## Project Overview and Significance 
 
