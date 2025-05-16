@@ -17,7 +17,7 @@ def convert_to_binary(feature):
         return 0
     
 # Get user inputs for all features
-Age_input = st.selectbox("How old you are?", list(range(1, 99)), index=0) # Convert to grouping 
+Age_input = st.selectbox("How old you are?", list(range(1, 99))) # Convert to grouping 
 Income_input = st.number_input(label="Enter your annual income ($)", min_value=0,format="%d", step=1000)# Convert to grouping 
 HighBP_input = st.selectbox("Do you have high blood pressure?", ["Select", "Yes", "No"]) # Convert to binary
 HighChol_input = st.selectbox("Do you have high cholesterol?", ["Select","Yes", "No"]) # Convert to binary
